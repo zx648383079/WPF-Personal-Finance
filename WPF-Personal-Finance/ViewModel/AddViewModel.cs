@@ -72,6 +72,8 @@ namespace WPF_Personal_Finance.ViewModel
         private void Sava()
         {
             Model.MoneyInfo moneys = new Model.MoneyInfo(this.AddTime, this.Kind, this.Money, this.Remark);
+            MainViewModel.Moneys.Add(moneys);
+            this.CloseCommand.Execute(null);
         }
         
 

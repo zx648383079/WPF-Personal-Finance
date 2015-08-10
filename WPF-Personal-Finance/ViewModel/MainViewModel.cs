@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using WPF_Personal_Finance.Model;
 
 namespace WPF_Personal_Finance.ViewModel
 {
@@ -12,21 +14,18 @@ namespace WPF_Personal_Finance.ViewModel
         public MainViewModel()
         {
             this.AddCommand = new CommandBase(param=>this.Add());
-            this.Name = "测试";
+            Moneys = new ObservableCollection<MoneyInfo>();
         }
         #region 属性
 
-        private string _name;
-
-        
-        public string Name
+        public static ObservableCollection<MoneyInfo> Moneys
         {
-            get { return _name; }
-            set
-            {
-                base.SetProperty(ref this._name,value);
-            }
+            get;
+            set;
         }
+
+
+
         #endregion
 
         #region 命令
@@ -44,7 +43,6 @@ namespace WPF_Personal_Finance.ViewModel
         /// </summary>
         private void Add()
         {
-            this.Name += "整的";
             View.AddWindow addWindow = new View.AddWindow();
             AddViewModel addViewModel = new AddViewModel();
             EventHandler handler = null;
