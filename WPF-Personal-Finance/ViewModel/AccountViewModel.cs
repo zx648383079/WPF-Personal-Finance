@@ -8,9 +8,9 @@ using System.Windows.Input;
 
 namespace WPF_Personal_Finance.ViewModel
 {
-    public class AddViewModel:WorkViewModel
+    public class AccountViewModel:WorkViewModel
     {
-        public AddViewModel(Window win)
+        public AccountViewModel(Window win)
         {
             this.SavaCommand = new CommandBase(param => this.Sava());
             this.AddTime = DateTime.Now;
@@ -32,21 +32,6 @@ namespace WPF_Personal_Finance.ViewModel
             }
         }
 
-        private int _kind;
-
-        public int Kind
-        {
-            get { return _kind; }
-            set { this.SetProperty(ref this._kind, value); }
-        }
-
-        private int _account;
-
-        public int Account
-        {
-            get { return _account; }
-            set { this.SetProperty(ref this._account, value); }
-        }
 
         private double _money;
         /// <summary>
@@ -81,16 +66,11 @@ namespace WPF_Personal_Finance.ViewModel
 
         private void Sava()
         {
-            Model.MoneyInfo moneys = new Model.MoneyInfo(this.AddTime, this.Kind , this.Account, this.Money, this.Remark);
-            MainViewModel.Moneys.Add(moneys);
+            Model.AccountInfo account = new Model.AccountInfo(this.AddTime, this.Money, this.Remark);
+            //MainViewModel.Moneys.Add(account);
             this.CloseCommand.Execute(null);
         }
-        
 
         #endregion
     }
-
-    
-
-    
 }

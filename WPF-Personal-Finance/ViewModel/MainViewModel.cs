@@ -43,7 +43,10 @@ namespace WPF_Personal_Finance.ViewModel
         /// </summary>
         private void Add()
         {
-            View.AddWindow addWindow = new View.AddWindow();
+            AddViewModel addViewModel = new AddViewModel(new View.AddWindow());
+            
+            
+            /*View.AddWindow addWindow = new View.AddWindow();
             AddViewModel addViewModel = new AddViewModel();
             EventHandler handler = null;
             handler = delegate
@@ -53,7 +56,7 @@ namespace WPF_Personal_Finance.ViewModel
             };
             addViewModel.RequestClose += handler;
             addWindow.DataContext = addViewModel;
-            addWindow.Show();
+            addWindow.Show();*/
         }
         
         #endregion

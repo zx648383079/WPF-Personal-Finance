@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WPF_Personal_Finance.Model
 {
-    public class MoneyInfo
+    public class AccountInfo
     {
         private DateTime _addTime;
 
@@ -15,24 +15,7 @@ namespace WPF_Personal_Finance.Model
             get { return _addTime; }
             set { _addTime = value; }
         }
-
-        private int _kind;
-
-        public int Kind
-        {
-            get { return _kind; }
-            set { _kind = value; }
-        }
-
-        private int _account;
-
-        public int Account
-        {
-            get { return _account; }
-            set { _account = value; }
-        }
-
-
+        
 
         private double _money;
 
@@ -50,16 +33,14 @@ namespace WPF_Personal_Finance.Model
             set { _remark = value; }
         }
 
-        public MoneyInfo()
+        public AccountInfo()
         {
 
         }
 
-        public MoneyInfo(DateTime addtime,int kind,int account,double money,string remark)
+        public AccountInfo(DateTime addtime, double money, string remark)
         {
             this.AddTime = addtime;
-            this.Kind = kind;
-            this.Account = account;
             this.Money = money;
             this.Remark = remark;
         }

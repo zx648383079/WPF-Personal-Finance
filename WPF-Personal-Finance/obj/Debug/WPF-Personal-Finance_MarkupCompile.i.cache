@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 D:\Documents\GitHub\WPF-Personal-Finance\WPF-Personal-Finance\App.xaml
-2419449264
+31689919404
 
-16-2001016580
+21-1556472923
 131254293103
-MainWindow.xaml;View\AddWindow.xaml;
+MainWindow.xaml;View\AccountWindow.xaml;View\AddWindow.xaml;
 
-False
+True
 

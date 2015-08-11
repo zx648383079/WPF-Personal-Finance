@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 
 namespace WPF_Personal_Finance.ViewModel
@@ -23,6 +24,24 @@ namespace WPF_Personal_Finance.ViewModel
         protected WorkViewModel()
         {
         }
+        
+
+
+        public void OpenWindow(Window win)
+        {
+            //this.GetType().GetField(str).
+            EventHandler handler = null;
+            handler = delegate
+            {
+                this.RequestClose -= handler;
+                win.Close();
+            };
+            this.RequestClose += handler;
+            win.DataContext = this;
+            win.Show();
+        }
+        
+
 
         #endregion // Constructor
 
